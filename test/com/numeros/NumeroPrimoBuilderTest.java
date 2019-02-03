@@ -7,18 +7,15 @@ import java.util.List;
 import org.junit.Test;
 
 public class NumeroPrimoBuilderTest {
-	/*
+	private NumeroPrimoBuilder numeroPrimoBuilder = new NumeroPrimoBuilder();
+	
 	@Test
 	public void test_primerNumeroPrimo(){
-		NumeroPrimoBuilder numeroPrimoBuilder = new NumeroPrimoBuilder();
 		List<Integer> numerosPrimos = numeroPrimoBuilder.build(1);
 		assertEquals(1, numerosPrimos.size());
 		assertEquals(new Integer(2), numerosPrimos.get(0));
 	}
-	*/
 	
-	private NumeroPrimoBuilder numeroPrimoBuilder = new NumeroPrimoBuilder();
-
 	@Test
 	public void test_segundoNumeroPrimo(){
 		List<Integer> numerosPrimos = numeroPrimoBuilder.build(2);

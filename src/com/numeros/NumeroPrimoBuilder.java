@@ -1,12 +1,30 @@
 package com.numeros;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class NumeroPrimoBuilder {
 	
 	public List<Integer> build(int numberOfPrimes){
-		return Arrays.asList(2,3);
+		List<Integer> primes = new ArrayList<>();
+		
+		int lastNumberChecked = 2;
+		
+		while(!isSizeEqualsOrBigger(numberOfPrimes, primes)){
+			addIfPrime(primes, lastNumberChecked);
+			lastNumberChecked++;
+		}
+		return primes;
+	}
+
+	private boolean isSizeEqualsOrBigger(int numberOfPrimes, List<Integer> primes) {
+		return primes.size() >= numberOfPrimes;
+	}
+
+	private void addIfPrime(List<Integer> primes, int lastNumberChecked) {
+		if(isPrime(lastNumberChecked)){
+			primes.add(lastNumberChecked);
+		}
 	}
 	
 	public boolean isPrime(int numero){
